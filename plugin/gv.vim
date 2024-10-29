@@ -67,7 +67,7 @@ function! s:type(visual)
   if exists('b:git_origin')
     let syn = synIDattr(synID(line('.'), col('.'), 0), 'name')
     if syn == 'gvGitHub'
-      return ['link', '/issues/'.expand('<cword>')[1:]]
+      return ['link', '/pull/'.expand('<cword>')[1:]]
     elseif syn == 'gvTag'
       let tag = matchstr(getline('.'), '(tag: \zs[^ ,)]\+')
       return ['link', '/releases/'.tag]
